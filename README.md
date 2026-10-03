@@ -1,4 +1,4 @@
-# Monika Sharma — Portfolio
+# Tejasvi Kumar — Portfolio
 
 Personal portfolio site. Plain HTML, CSS and JavaScript — no frameworks, no build step, no dependencies (only Google Fonts).
 
@@ -25,13 +25,15 @@ After deploying, set your real URL in the `og:url` meta tag in `index.html`.
 
 | What | Where |
 |---|---|
-| Project links (EATWANA, FundLab) | `js/script.js` → `PROJECT_LINKS` |
-| FundLab tech-stack tags | `index.html` → the FundLab card, marked `Tech stack: confirm/edit these tags` |
-| Resume | Put the PDF in `assets/resume/`, then set `RESUME_URL` in `js/script.js` (e.g. `"assets/resume/Monika_Sharma_Resume.pdf"`) |
-| Project screenshots | Put images in `assets/images/`, then add them to the project card's `data-shots` attribute, comma separated. The first one becomes the main image; two or more get thumbnails. |
+| Project links (Repairo Moto, Library Sathi, Glow Lakshmi, Aurex Beverages, Chrome AI Extension) | `index.html` → the `href` on each project card's button |
+| Add a new project | Copy an existing `<article class="project">` card in `index.html`, edit the text and link, and keep the `project--reverse` class on every other card |
+| Resume | Put the PDF in `assets/resume/`, then set `RESUME_URL` in `js/script.js` (currently `"assets/resume/Tejasvi_Kumar_Resume_B.pdf"`) |
+| Project screenshots | Put images in `assets/images/`, then add them to the project card's `data-shots` attribute, comma separated. The first one becomes the main image; two or more get thumbnails. Cards without `data-shots` show a placeholder mockup. |
+| Contact form recipient | `js/script.js` → `EMAIL_TO` |
 | Availability badge | `index.html` → the `<p class="status">` in the hero. Edit the text or delete the line. |
+| Photos | `assets/images/tejasvi-kumar.JPG` (hero and About). Keep the file name and extension case identical to the path in `index.html`, since many hosts are case-sensitive. |
 
-Any link left as `""` shows a disabled button with a small "soon" tag, so the live site never has a broken link.
+A button with a `data-link` attribute and an empty value in `PROJECT_LINKS` shows a disabled state with a small "soon" tag, so the live site never has a broken link.
 
 ## Structure
 
@@ -41,7 +43,7 @@ portfolio/
 ├── css/style.css       theme tokens at the top, then components, then breakpoints
 ├── js/script.js        editable links at the top, then behaviour
 ├── assets/
-│   ├── images/         favicon.svg, og-image.png (social preview), screenshots
+│   ├── images/         favicon.svg, og-image.png (social preview), photos, project screenshots
 │   └── resume/         your resume PDF
 └── README.md
 ```
@@ -51,4 +53,4 @@ portfolio/
 - **Theme:** dark by default; the choice is saved in `localStorage`. Colours are CSS variables (`--background`, `--text`, `--secondary-text`, `--border`, `--card-background`, `--accent`) defined once per theme at the top of `style.css`.
 - **Contact form:** frontend-only. It validates, then opens the visitor's email app with the message pre-filled (`mailto:`). Nothing is sent to or stored on a server. To receive messages directly, swap the submit handler for a service like Formspree.
 - **Motion:** all animations respect the system "reduce motion" setting, and the hero background pauses when it's off-screen.
-- **Content:** every company, date, figure and achievement comes from Monika's own details. Nothing is invented; missing items are placeholders.
+- **Content:** every company, project and figure comes from Tejasvi's own details. Nothing is invented; missing items are left out rather than guessed.
